@@ -20,7 +20,7 @@ queryTypes.add(
 
 queryTypes.add(
   'delete'
-, '{with} delete from {table} {where} {returning}'
+, '{with} delete from {table} {where} {limit} {returning}'
 );
 
 queryTypes.add(
