@@ -25,8 +25,8 @@ helpers.register('columns', function(columns, values, query){
       else if (columns[i].indexOf('(') > -1)
         output += columns[i];
       else
-        output += utils.quoteObject(columns[i], query.__defaultTable);
-
+        output += utils.quoteObject(columns[i], !query.columns[i].alias ?  query.__defaultTable : '' );
+ 
       if ( typeof columns[i] == 'object' && ('as' in columns[i] || 'alias' in columns[i]))
         output += ' as "' + (columns[i].as || columns[i].alias) + '"';
 
